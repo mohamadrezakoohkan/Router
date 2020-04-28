@@ -54,7 +54,7 @@ public class HTTPRequest {
     }
     
     private func errorHandler(_ err: AFError) {
-        
+        print(err.localizedDescription)
     }
     
     public func createRequest() ->  HTTPRequest {
@@ -86,6 +86,7 @@ public class HTTPRequest {
                  }
              case .failure(let error):
                  self.errorHandler(error)
+                completion(nil)
              }
          }
     }

@@ -16,25 +16,12 @@ extension String {
 class RouterTests: XCTestCase {
     
     let sut = Request.shared
-    let bool = try! String(contentsOf: Bundle.main.url(forResource: "bool", withExtension: nil)!, encoding: .utf8)
-    let int = try! String(contentsOf: Bundle.main.url(forResource: "int", withExtension: nil)!, encoding: .utf8)
-    let string = try! String(contentsOf: Bundle.main.url(forResource: "string", withExtension: nil)!, encoding: .utf8)
-    
-    let dictionary: [String: Any] = {
-        let file = Bundle.main.url(forResource: "dictionary", withExtension: "json")!
-        let string = try! String(contentsOf: file, encoding: .utf8)
-        let data = string.data(using: .utf8)!
-        let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments)
-        return json as! [String: Any]
-    }()
-    
-    let collection: [Double] = {
-        let file = Bundle.main.url(forResource: "collection", withExtension: "txt")!
-        let string = try! String(contentsOf: file, encoding: .utf8)
-        let data = string.data(using: .utf8)!
-        let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments)
-        return json as! [Double]
-    }()
+    let bool = true
+    let int = 12300
+    let string = "Hello world!"
+    let dictionary = ["test": 100]
+    let collection: [Double] = [13.213,123.1,63.1,3.14]
+
         
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -48,7 +35,7 @@ class RouterTests: XCTestCase {
         let expectations = expectation(description: "Expect to get \(self.dictionary)")
         let request = self.sut.dictionaryRequest.testInformation()
         request.response { (json: [String: Any]?) in
-            guard json?["test"] as? Bool == self.dictionary["test"] as? Bool
+            guard json?["test"] as? Int == self.dictionary["test"]
                 else { XCTFail("Fail \(json ?? [:])"); return }
             expectations.fulfill()
         }
@@ -78,10 +65,10 @@ class RouterTests: XCTestCase {
     }
     
     func testBool() {
-        let expectations = expectation(description: "Expect to get \(self.bool.bool)")
+        let expectations = expectation(description: "Expect to get \(self.bool)")
         let request = self.sut.stringRequest.testInformation()
         request.response { (value: String?) in
-            guard value?.bool == self.bool.bool
+            guard value?.bool == self.bool
                 else { XCTFail("Fail \(self.string)"); return }
             expectations.fulfill()
         }

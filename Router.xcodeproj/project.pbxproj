@@ -20,10 +20,6 @@
 		DDDB9C7D24588E67008248A7 /* HTTPEncodingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C7C24588E67008248A7 /* HTTPEncodingOptions.swift */; };
 		DDDB9C7F24588FD5008248A7 /* HTTPRequestRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C7E24588FD5008248A7 /* HTTPRequestRetrier.swift */; };
 		DDDB9C812458A5F9008248A7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C802458A5F9008248A7 /* Request.swift */; };
-		DDDB9C842458EE7A008248A7 /* bool in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C832458EE7A008248A7 /* bool */; };
-		DDDB9C862458EE81008248A7 /* int in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C852458EE81008248A7 /* int */; };
-		DDDB9C882458EE94008248A7 /* dictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = DDDB9C872458EE94008248A7 /* dictionary.json */; };
-		DDDB9C8A2458EEA1008248A7 /* collection.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDDB9C892458EEA1008248A7 /* collection.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,8 +232,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDDB9C8A2458EEA1008248A7 /* collection.txt in Resources */,
-				DDDB9C882458EE94008248A7 /* dictionary.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,9 +254,7 @@
 				DDDB9C7B24588B1F008248A7 /* Router.swift in Sources */,
 				DD0DEBAD2457667D00C32BE0 /* DomainScheme.swift in Sources */,
 				DDDB9C7D24588E67008248A7 /* HTTPEncodingOptions.swift in Sources */,
-				DDDB9C842458EE7A008248A7 /* bool in Sources */,
 				DD0DEBB224576D7200C32BE0 /* EndpointScheme.swift in Sources */,
-				DDDB9C862458EE81008248A7 /* int in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
