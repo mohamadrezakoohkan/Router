@@ -104,12 +104,12 @@ class RouterTests: XCTestCase {
     func testFactory() {
         let expectations = expectation(description: "Expect to get a list of factories")
         let request = self.sut.factoryRequest.testInformation()
-        request.response(decodable: [Factory.self]) { (car) in
-            guard let _car = car else {
+        request.response(decodable: [Factory].self) { (factories) in
+            guard let _factories = factories else {
                 XCTFail("Fail car is nil")
                 return
             }
-            print(_car)
+            print(_factories)
             expectations.fulfill()
         }
         wait(for: [expectations], timeout: 30)

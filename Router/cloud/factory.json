@@ -1,6 +1,6 @@
 [
     {
-        "name": "Car factory"
+        "name": "Car factory",
         "cars": [
             {
                 "model": "BMW",
@@ -15,7 +15,7 @@
         ]
     },
     {
-        "name": "Farm factory"
+        "name": "Farm factory",
         "cars": [
             {
                 "model": "Zamiad",
