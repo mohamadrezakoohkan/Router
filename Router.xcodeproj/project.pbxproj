@@ -20,6 +20,8 @@
 		DDDB9C7D24588E67008248A7 /* HTTPEncodingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C7C24588E67008248A7 /* HTTPEncodingOptions.swift */; };
 		DDDB9C7F24588FD5008248A7 /* HTTPRequestRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C7E24588FD5008248A7 /* HTTPRequestRetrier.swift */; };
 		DDDB9C812458A5F9008248A7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C802458A5F9008248A7 /* Request.swift */; };
+		DDDB9C8E2459890B008248A7 /* car.json in Resources */ = {isa = PBXBuildFile; fileRef = DDDB9C8D2459890B008248A7 /* car.json */; };
+		DDDB9C902459895D008248A7 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C8F2459895D008248A7 /* Car.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		DDDB9C872458EE94008248A7 /* dictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dictionary.json; sourceTree = "<group>"; };
 		DDDB9C892458EEA1008248A7 /* collection.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = collection.txt; sourceTree = "<group>"; };
 		DDDB9C8B2458F1D1008248A7 /* string */ = {isa = PBXFileReference; lastKnownFileType = text; name = string; path = ../string; sourceTree = "<group>"; };
+		DDDB9C8D2459890B008248A7 /* car.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = car.json; sourceTree = "<group>"; };
+		DDDB9C8F2459895D008248A7 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				DD0DEBB32457709F00C32BE0 /* Endpoint.swift */,
 				DD0DEBB5245770FA00C32BE0 /* Domain.swift */,
 				DDDB9C802458A5F9008248A7 /* Request.swift */,
+				DDDB9C8F2459895D008248A7 /* Car.swift */,
 			);
 			path = RouterTests;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 				DDDB9C852458EE81008248A7 /* int */,
 				DDDB9C872458EE94008248A7 /* dictionary.json */,
 				DDDB9C892458EEA1008248A7 /* collection.txt */,
+				DDDB9C8D2459890B008248A7 /* car.json */,
 			);
 			path = cloud;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDDB9C8E2459890B008248A7 /* car.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +271,7 @@
 			files = (
 				DD0DEBB42457709F00C32BE0 /* Endpoint.swift in Sources */,
 				DDDB9C812458A5F9008248A7 /* Request.swift in Sources */,
+				DDDB9C902459895D008248A7 /* Car.swift in Sources */,
 				DD0DEBA12457666900C32BE0 /* RouterTests.swift in Sources */,
 				DD0DEBB6245770FA00C32BE0 /* Domain.swift in Sources */,
 			);

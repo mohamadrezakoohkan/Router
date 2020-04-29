@@ -36,4 +36,8 @@ class Request {
     let stringRequest2 = {
         return HTTPRequest(endpoint: Endpoint.string2.resolve)
     }()
+    
+    let carRequest = {
+        return HTTPRequest(endpoint: Endpoint.car.resolve)
+    }()
 }

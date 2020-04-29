@@ -11,14 +11,15 @@ import Foundation
 
 
 enum Endpoint: HTTPEndpoint {
-        
- 
+    
+    
     case dictionary
     case collection
     case string
     case bool
     case int
     case string2
+    case car
     
     var endpoint: String {
         switch self {
@@ -34,6 +35,8 @@ enum Endpoint: HTTPEndpoint {
             return "Router/cloud/int"
         case .string2:
             return "string.hoxpz"
+        case .car:
+            return "car.json"
         }
     }
     
@@ -43,7 +46,7 @@ enum Endpoint: HTTPEndpoint {
             return .init(domain: Domain.mohamadrezacodes.resolve, endpoint: self.endpoint)
         default:
             return .init(domain: Domain.github.resolve, endpoint: self.endpoint)
-
+            
         }
     }
     

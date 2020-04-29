@@ -91,47 +91,29 @@ public class HTTPRequest {
          }
     }
     
-    public func json(_ completion: @escaping ([String: Any]) -> Void) {
+    public func decode<T: Decodable>(decodable: T.Type,
+                                     decoder: JSONDecoder = JSONDecoder(),
+                       _ completion: @escaping (T?) -> Void) {
         guard let req = self.request else {
-            print("@HTTP No DataRequest found")
-            completion([:])
+            print("@HTTP No DataRequest found - first create request using createRequest method")
+            completion(nil)
             return
         }
-        req.responseJSON { (res) in
-            switch res.result {
+        req.responseDecodable(of: decodable, decoder: decoder) {
+            (response: DataResponse<T,AFError>) in
+            switch response.result {
             case .success(let value):
-                if let json = value as? [String: Any] {
-                    completion(json)
-                }else{
-                    print("@HTTP \(self.endpoint.urlString) not retriving json but getting: \(value)")
-                    completion([:])
-                }
+//                if let result = value as? T {
+                    completion(value)
+//                }else{
+//                   print("@HTTP \(self.endpoint.urlString) not retriving \(T.self) but getting: \(value)")
+//                    completion(nil)
+//                }
             case .failure(let error):
                 self.errorHandler(error)
+               completion(nil)
             }
         }
     }
-    
-    public func jsonCollection(_ completion: @escaping ([[String: Any]]) -> Void) {
-        guard let req = self.request else {
-            print("@HTTP No DataRequest found")
-            completion([])
-            return
-        }
-        req.responseJSON { (res) in
-            switch res.result {
-            case .success(let value):
-                if let collection = value as? [[String: Any]] {
-                    completion(collection)
-                }else{
-                    print("@HTTP \(self.endpoint.urlString) not retriving json collection but getting: \(value)")
-                    completion([])
-                }
-            case .failure(let error):
-                self.errorHandler(error)
-            }
-        }
-    }
-    
 }
 
