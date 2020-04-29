@@ -41,7 +41,7 @@ class Request {
         return HTTPRequest(endpoint: Endpoint.car.resolve)
     }()
     
-    let factoryRequest = {
-         return HTTPRequest(endpoint: Endpoint.factory.resolve)
+    let factoriesRequest = {
+         return HTTPRequest(endpoint: Endpoint.factories.resolve)
      }()
 }

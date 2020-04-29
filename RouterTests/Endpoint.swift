@@ -20,7 +20,7 @@ enum Endpoint: HTTPEndpoint {
     case int
     case string2
     case car
-    case factory
+    case factories
     
     var endpoint: String {
         switch self {
@@ -38,8 +38,8 @@ enum Endpoint: HTTPEndpoint {
             return "string.hoxpz"
         case .car:
             return "Router/cloud/car.json"
-        case .factory:
-            return "Router/cloud/factory.json"
+        case .factories:
+            return "Router/cloud/factories.json"
         }
     }
     

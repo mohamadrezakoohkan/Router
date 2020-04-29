@@ -103,7 +103,7 @@ class RouterTests: XCTestCase {
 
     func testFactory() {
         let expectations = expectation(description: "Expect to get a list of factories")
-        let request = self.sut.factoryRequest.testInformation()
+        let request = self.sut.factoriesRequest.testInformation()
         request.response(decodable: [Factory].self) { (factories) in
             guard let _factories = factories else {
                 XCTFail("Fail car is nil")

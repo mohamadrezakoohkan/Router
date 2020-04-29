@@ -22,7 +22,7 @@
 		DDDB9C812458A5F9008248A7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C802458A5F9008248A7 /* Request.swift */; };
 		DDDB9C8E2459890B008248A7 /* car.json in Resources */ = {isa = PBXBuildFile; fileRef = DDDB9C8D2459890B008248A7 /* car.json */; };
 		DDDB9C902459895D008248A7 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C8F2459895D008248A7 /* Car.swift */; };
-		DDDB9C9224599418008248A7 /* factory.json in Resources */ = {isa = PBXBuildFile; fileRef = DDDB9C9124599418008248A7 /* factory.json */; };
+		DDDB9C9224599418008248A7 /* factories.json in Resources */ = {isa = PBXBuildFile; fileRef = DDDB9C9124599418008248A7 /* factories.json */; };
 		DDDB9C9424599491008248A7 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C9324599491008248A7 /* Factory.swift */; };
 		DDDB9C9624599643008248A7 /* string in Resources */ = {isa = PBXBuildFile; fileRef = DDDB9C9524599643008248A7 /* string */; };
 /* End PBXBuildFile section */
@@ -59,7 +59,7 @@
 		DDDB9C892458EEA1008248A7 /* collection.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = collection.txt; sourceTree = "<group>"; };
 		DDDB9C8D2459890B008248A7 /* car.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = car.json; sourceTree = "<group>"; };
 		DDDB9C8F2459895D008248A7 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		DDDB9C9124599418008248A7 /* factory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = factory.json; sourceTree = "<group>"; };
+		DDDB9C9124599418008248A7 /* factories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = factories.json; sourceTree = "<group>"; };
 		DDDB9C9324599491008248A7 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		DDDB9C9524599643008248A7 /* string */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = string; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,7 +141,7 @@
 				DDDB9C872458EE94008248A7 /* dictionary.json */,
 				DDDB9C892458EEA1008248A7 /* collection.txt */,
 				DDDB9C8D2459890B008248A7 /* car.json */,
-				DDDB9C9124599418008248A7 /* factory.json */,
+				DDDB9C9124599418008248A7 /* factories.json */,
 			);
 			path = cloud;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDDB9C9624599643008248A7 /* string in Resources */,
-				DDDB9C9224599418008248A7 /* factory.json in Resources */,
+				DDDB9C9224599418008248A7 /* factories.json in Resources */,
 				DDDB9C8E2459890B008248A7 /* car.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
