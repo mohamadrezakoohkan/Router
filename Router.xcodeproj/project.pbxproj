@@ -24,6 +24,7 @@
 		DDDB9C902459895D008248A7 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C8F2459895D008248A7 /* Car.swift */; };
 		DDDB9C9224599418008248A7 /* factory.json in Resources */ = {isa = PBXBuildFile; fileRef = DDDB9C9124599418008248A7 /* factory.json */; };
 		DDDB9C9424599491008248A7 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C9324599491008248A7 /* Factory.swift */; };
+		DDDB9C9624599643008248A7 /* string in Resources */ = {isa = PBXBuildFile; fileRef = DDDB9C9524599643008248A7 /* string */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,11 +57,11 @@
 		DDDB9C852458EE81008248A7 /* int */ = {isa = PBXFileReference; lastKnownFileType = text; path = int; sourceTree = "<group>"; };
 		DDDB9C872458EE94008248A7 /* dictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dictionary.json; sourceTree = "<group>"; };
 		DDDB9C892458EEA1008248A7 /* collection.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = collection.txt; sourceTree = "<group>"; };
-		DDDB9C8B2458F1D1008248A7 /* string */ = {isa = PBXFileReference; lastKnownFileType = text; name = string; path = ../string; sourceTree = "<group>"; };
 		DDDB9C8D2459890B008248A7 /* car.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = car.json; sourceTree = "<group>"; };
 		DDDB9C8F2459895D008248A7 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		DDDB9C9124599418008248A7 /* factory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = factory.json; sourceTree = "<group>"; };
 		DDDB9C9324599491008248A7 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		DDDB9C9524599643008248A7 /* string */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = string; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				DDDB9C832458EE7A008248A7 /* bool */,
-				DDDB9C8B2458F1D1008248A7 /* string */,
+				DDDB9C9524599643008248A7 /* string */,
 				DDDB9C852458EE81008248A7 /* int */,
 				DDDB9C872458EE94008248A7 /* dictionary.json */,
 				DDDB9C892458EEA1008248A7 /* collection.txt */,
@@ -244,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDDB9C9624599643008248A7 /* string in Resources */,
 				DDDB9C9224599418008248A7 /* factory.json in Resources */,
 				DDDB9C8E2459890B008248A7 /* car.json in Resources */,
 			);
