@@ -91,7 +91,7 @@ public class HTTPRequest {
          }
     }
     
-    public func decode<T: Decodable>(decodable: T.Type,
+    public func response<T: Decodable>(decodable: T.Type,
                                      decoder: JSONDecoder = JSONDecoder(),
                        _ completion: @escaping (T?) -> Void) {
         guard let req = self.request else {
