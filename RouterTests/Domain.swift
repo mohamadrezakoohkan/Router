@@ -15,12 +15,16 @@ enum Domain {
     
     case github
     
+    case mohamadrezacodes
+    
     case custom(String)
     
     var resolve: DomainScheme {
         switch self {
         case .github:
             return .init(scheme: "https://raw.githubusercontent.com/mohamadrezakoohkan/Router/master/")
+        case .mohamadrezacodes:
+            return .init(scheme: "https://mohamadreza.codes/api/")
         case .custom(let domain):
             return .init(scheme: domain)
         }

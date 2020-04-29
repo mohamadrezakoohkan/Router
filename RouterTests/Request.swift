@@ -32,4 +32,8 @@ class Request {
     let intRequest = {
         return HTTPRequest(endpoint: Endpoint.int.resolve)
     }()
+    
+    let stringRequest2 = {
+        return HTTPRequest(endpoint: Endpoint.string2.resolve)
+    }()
 }

@@ -19,6 +19,7 @@ class RouterTests: XCTestCase {
     let bool = true
     let int = 12300
     let string = "Hello world!"
+    let string2 = "Hello world"
     let dictionary = ["test": 100]
     let collection: [Double] = [13.213,123.1,63.1,3.14]
 
@@ -64,11 +65,22 @@ class RouterTests: XCTestCase {
         wait(for: [expectations], timeout: 30)
     }
     
+    func testString2() {
+        let expectations = expectation(description: "Expect to get \(self.string)")
+        let request = self.sut.stringRequest2.testInformation()
+        request.response { (value: String?) in
+            guard value == self.string2
+                else { XCTFail("Fail \(self.string)"); return }
+            expectations.fulfill()
+        }
+        wait(for: [expectations], timeout: 30)
+    }
+    
     func testBool() {
         let expectations = expectation(description: "Expect to get \(self.bool)")
-        let request = self.sut.stringRequest.testInformation()
-        request.response { (value: String?) in
-            guard value?.bool == self.bool
+        let request = self.sut.boolRequest.testInformation()
+        request.response { (value: Bool?) in
+            guard value == self.bool
                 else { XCTFail("Fail \(self.string)"); return }
             expectations.fulfill()
         }

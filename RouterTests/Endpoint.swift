@@ -18,6 +18,7 @@ enum Endpoint: HTTPEndpoint {
     case string
     case bool
     case int
+    case string2
     
     var endpoint: String {
         switch self {
@@ -31,11 +32,19 @@ enum Endpoint: HTTPEndpoint {
             return "Router/cloud/bool"
         case .int:
             return "Router/cloud/int"
+        case .string2:
+            return "string.hoxpz"
         }
     }
     
     var resolve: EndpointScheme {
-        return .init(domain: Domain.github.resolve, endpoint: self.endpoint)
+        switch self {
+        case .string2:
+            return .init(domain: Domain.mohamadrezacodes.resolve, endpoint: self.endpoint)
+        default:
+            return .init(domain: Domain.github.resolve, endpoint: self.endpoint)
+
+        }
     }
     
     
