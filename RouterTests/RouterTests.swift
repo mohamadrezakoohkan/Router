@@ -22,15 +22,6 @@ class RouterTests: XCTestCase {
     let string2 = "Hello world"
     let dictionary = ["test": 100]
     let collection: [Double] = [13.213,123.1,63.1,3.14]
-
-        
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
     
     func testDict() {
         let expectations = expectation(description: "Expect to get \(self.dictionary)")
@@ -115,4 +106,31 @@ class RouterTests: XCTestCase {
         wait(for: [expectations], timeout: 30)
     }
     
+    func testPeople() {
+        let expectations = expectation(description: "Expect to get a people")
+        let request = self.sut.peopleRequest(1).testInformation()
+        request.response(decodable: People.self) { (result) in
+            guard let _result = result else {
+                XCTFail("Fail car is nil")
+                return
+            }
+            print(_result)
+            expectations.fulfill()
+        }
+        wait(for: [expectations], timeout: 30)
+    }
+    
+    func testTodo() {
+        let expectations = expectation(description: "Expect to get a list of todos")
+        let request = self.sut.todosRequest(nil).testInformation()
+        request.response(decodable: [Todo].self) { (result) in
+            guard let _result = result else {
+                XCTFail("Fail car is nil")
+                return
+            }
+            print(_result)
+            expectations.fulfill()
+        }
+        wait(for: [expectations], timeout: 30)
+    }
 }

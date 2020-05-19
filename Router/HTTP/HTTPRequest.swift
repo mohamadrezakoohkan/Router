@@ -11,24 +11,22 @@ import Alamofire
 
 public class HTTPRequest {
     
-    public let endpoint: EndpointScheme
+    public let endpoint: HTTPEndpoint
     public let method: Alamofire.HTTPMethod
-    public let session: Alamofire.Session
+    public let session: HTTPSession
     public let header: Alamofire.HTTPHeaders?
     public let body: Alamofire.Parameters?
     public let encoding: HTTPEncodingOptions
-    public let retrier: HTTPRequestRetrier?
     public let validationRange: ClosedRange<Int>
     public var request: DataRequest?
     
     
-    public init(session: Alamofire.Session = .default,
-                endpoint: EndpointScheme,
+    public init(session: HTTPSession = .shared,
+                endpoint: HTTPEndpoint,
                 method: Alamofire.HTTPMethod = .get,
                 header: Alamofire.HTTPHeaders? = nil,
                 body: Alamofire.Parameters? = nil,
                 encoding: HTTPEncodingOptions = .json,
-                retrier: HTTPRequestRetrier? = nil,
                 validationRange: ClosedRange<Int> = 0...1000) {
 
         self.endpoint = endpoint
@@ -37,13 +35,12 @@ public class HTTPRequest {
         self.header = header
         self.body = body
         self.encoding = encoding
-        self.retrier = retrier
         self.validationRange = validationRange
         _ = self.createRequest()
     }
     
-    func testInformation() -> HTTPRequest {
-        print("Endpoint:",self.endpoint.urlString)
+    public func testInformation() -> HTTPRequest {
+        print("Endpoint:",self.endpoint.resolve.urlString)
         print("Method:",self.method.rawValue)
         print("Session:",String(describing: self.session.self))
         print("Header:",self.header ?? [:])
@@ -58,12 +55,11 @@ public class HTTPRequest {
     }
     
     public func createRequest() ->  HTTPRequest {
-        self.request = session.request(self.endpoint,
+        self.request = session.request(self.endpoint.resolve,
                                        method: self.method,
                                        parameters: self.body,
                                        encoding: self.encoding.resolve,
-                                       headers: self.header,
-                                       interceptor: self.retrier)
+                                       headers: self.header)
         self.request?.validate(statusCode: self.validationRange)
         return self
     }
@@ -81,7 +77,7 @@ public class HTTPRequest {
                  if let result = value as? T {
                      completion(result)
                  }else{
-                    print("@HTTP \(self.endpoint.urlString) not retriving \(T.self) but getting: \(value)")
+                    print("@HTTP \(self.endpoint.resolve.urlString) not retriving \(T.self) but getting: \(value)")
                      completion(nil)
                  }
              case .failure(let error):
@@ -103,12 +99,7 @@ public class HTTPRequest {
             (response: DataResponse<T,AFError>) in
             switch response.result {
             case .success(let value):
-//                if let result = value as? T {
                     completion(value)
-//                }else{
-//                   print("@HTTP \(self.endpoint.urlString) not retriving \(T.self) but getting: \(value)")
-//                    completion(nil)
-//                }
             case .failure(let error):
                 self.errorHandler(error)
                completion(nil)

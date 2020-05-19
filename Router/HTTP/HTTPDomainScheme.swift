@@ -9,7 +9,8 @@
 import Foundation
 import Alamofire
 
-public class DomainScheme {
+public class HTTPDomainScheme {
+    
     
     public let scheme: String
     public let url: URL?
@@ -19,19 +20,15 @@ public class DomainScheme {
         return scheme.contains("https")
     }()
     
+    public var isReachable: Bool {
+        let reachablitiy = NetworkReachabilityManager(host: self.scheme)
+        return reachablitiy?.isReachable == true
+    }
+    
     public init(scheme: String) {
         self.scheme = scheme
         self.url = URL(string: scheme)
         self.request = url != nil ? URLRequest(url: self.url!) : nil
-    }
-    
-    
-    public func isReachable(_ completion: @escaping (Bool) -> Void) {
-        guard let request = self.request else { return }
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            print(error?.localizedDescription ?? "\(self.scheme) is reachable")
-            error == nil ? completion(true) : completion(false)
-        }.resume()
     }
     
 }

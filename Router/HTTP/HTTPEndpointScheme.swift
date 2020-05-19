@@ -9,28 +9,17 @@
 import Foundation
 import Alamofire
 
-protocol HTTPEndpoint {
-    var resolve: EndpointScheme { get }
-    func add(to url: String, _ parameter: Any?) -> String
-}
-
-extension HTTPEndpoint {
-    func add(to url: String, _ parameter: Any?) -> String {
-        return "\(url)\(parameter == nil ? "" : "\(parameter!)/")"
-    }
-}
-
-public class EndpointScheme: URLConvertible {
+public class HTTPEndpointScheme: URLConvertible {
     
-    public let domain: DomainScheme
+    public let domain: HTTPDomain
     public let endpoint: String
     public let urlString: String
     public let url: URL?
     
-    public init(domain: DomainScheme, endpoint: String) {
+    public init(domain: HTTPDomain, endpoint: String) {
         self.domain = domain
         self.endpoint = endpoint
-        self.urlString = domain.scheme + endpoint
+        self.urlString = domain.resolve.scheme + endpoint
         self.url = URL(string: self.urlString)
     }
     
@@ -38,7 +27,7 @@ public class EndpointScheme: URLConvertible {
         if let _url = self.url {
             return _url
         }else{
-            throw AFError.invalidURL(url: domain.scheme + endpoint)
+            throw AFError.invalidURL(url: self.domain.resolve.scheme + endpoint)
         }
     }
     

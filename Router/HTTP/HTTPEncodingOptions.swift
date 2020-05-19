@@ -14,7 +14,7 @@ public enum HTTPEncodingOptions {
     case params
     case json
     
-    var resolve: ParameterEncoding {
+    public var resolve: ParameterEncoding {
         switch self {
         case .json:
             return JSONEncoding.prettyPrinted

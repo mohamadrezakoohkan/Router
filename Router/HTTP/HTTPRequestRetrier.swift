@@ -11,6 +11,10 @@ import Alamofire
 
 public struct HTTPRequestRetrier: RequestInterceptor {
     
+    public init() {
+
+    }
+    
     public func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         completion(.success(urlRequest))
     }

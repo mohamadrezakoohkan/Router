@@ -21,6 +21,8 @@ enum Endpoint: HTTPEndpoint {
     case string2
     case car
     case factories
+    case people(Int? = nil)
+    case todos(Int? = nil)
     
     var endpoint: String {
         switch self {
@@ -40,15 +42,23 @@ enum Endpoint: HTTPEndpoint {
             return "Router/cloud/car.json"
         case .factories:
             return "Router/cloud/factories.json"
+        case .people(let id):
+            return self.add(to: "people/", id)
+        case .todos(let id):
+            return self.add(to: "todos/", id)
         }
     }
     
-    var resolve: EndpointScheme {
+    var resolve: HTTPEndpointScheme {
         switch self {
         case .string2:
-            return .init(domain: Domain.mohamadrezacodes.resolve, endpoint: self.endpoint)
+            return .init(domain: Domain.mohamadrezacodes, endpoint: self.endpoint)
+        case .people(_):
+            return .init(domain: Domain.swapi, endpoint: self.endpoint)
+        case .todos(_):
+            return .init(domain: Domain.jsonPlaceholder, endpoint: self.endpoint)
         default:
-            return .init(domain: Domain.github.resolve, endpoint: self.endpoint)
+            return .init(domain: Domain.github, endpoint: self.endpoint)
             
         }
     }

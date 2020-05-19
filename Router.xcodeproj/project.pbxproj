@@ -10,13 +10,18 @@
 		DD0DEB9C2457666900C32BE0 /* Router.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0DEB922457666900C32BE0 /* Router.framework */; };
 		DD0DEBA12457666900C32BE0 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DEBA02457666900C32BE0 /* RouterTests.swift */; };
 		DD0DEBA32457666900C32BE0 /* Router.h in Headers */ = {isa = PBXBuildFile; fileRef = DD0DEB952457666900C32BE0 /* Router.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DD0DEBAD2457667D00C32BE0 /* DomainScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DEBAC2457667D00C32BE0 /* DomainScheme.swift */; };
+		DD0DEBAD2457667D00C32BE0 /* HTTPDomainScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DEBAC2457667D00C32BE0 /* HTTPDomainScheme.swift */; };
 		DD0DEBB0245766DE00C32BE0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DD0DEBAF245766DE00C32BE0 /* Alamofire */; };
-		DD0DEBB224576D7200C32BE0 /* EndpointScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DEBB124576D7200C32BE0 /* EndpointScheme.swift */; };
+		DD0DEBB224576D7200C32BE0 /* HTTPEndpointScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DEBB124576D7200C32BE0 /* HTTPEndpointScheme.swift */; };
 		DD0DEBB42457709F00C32BE0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DEBB32457709F00C32BE0 /* Endpoint.swift */; };
 		DD0DEBB6245770FA00C32BE0 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DEBB5245770FA00C32BE0 /* Domain.swift */; };
+		DD82771E245A072900DDD60B /* HTTPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82771D245A072900DDD60B /* HTTPEndpoint.swift */; };
+		DD827720245A088600DDD60B /* HTTPDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82771F245A088600DDD60B /* HTTPDomain.swift */; };
+		DDD41658245B615C003C35E7 /* HTTPSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD41657245B615C003C35E7 /* HTTPSession.swift */; };
+		DDD4165A245C206C003C35E7 /* HTTPAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD41659245C206C003C35E7 /* HTTPAuthorization.swift */; };
+		DDD4165C245C2D13003C35E7 /* HTTP+OperationQue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD4165B245C2D13003C35E7 /* HTTP+OperationQue.swift */; };
 		DDDB9C7724588A77008248A7 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C7624588A77008248A7 /* HTTPRequest.swift */; };
-		DDDB9C7B24588B1F008248A7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C7A24588B1F008248A7 /* Router.swift */; };
+		DDDB9C7B24588B1F008248A7 /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C7A24588B1F008248A7 /* HTTPManager.swift */; };
 		DDDB9C7D24588E67008248A7 /* HTTPEncodingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C7C24588E67008248A7 /* HTTPEncodingOptions.swift */; };
 		DDDB9C7F24588FD5008248A7 /* HTTPRequestRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C7E24588FD5008248A7 /* HTTPRequestRetrier.swift */; };
 		DDDB9C812458A5F9008248A7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C802458A5F9008248A7 /* Request.swift */; };
@@ -25,6 +30,8 @@
 		DDDB9C9224599418008248A7 /* factories.json in Resources */ = {isa = PBXBuildFile; fileRef = DDDB9C9124599418008248A7 /* factories.json */; };
 		DDDB9C9424599491008248A7 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C9324599491008248A7 /* Factory.swift */; };
 		DDDB9C9624599643008248A7 /* string in Resources */ = {isa = PBXBuildFile; fileRef = DDDB9C9524599643008248A7 /* string */; };
+		DDDB9C982459984D008248A7 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C972459984D008248A7 /* People.swift */; };
+		DDDB9C9A24599954008248A7 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDB9C9924599953008248A7 /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +51,17 @@
 		DD0DEB9B2457666900C32BE0 /* RouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0DEBA02457666900C32BE0 /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 		DD0DEBA22457666900C32BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD0DEBAC2457667D00C32BE0 /* DomainScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainScheme.swift; sourceTree = "<group>"; };
-		DD0DEBB124576D7200C32BE0 /* EndpointScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointScheme.swift; sourceTree = "<group>"; };
+		DD0DEBAC2457667D00C32BE0 /* HTTPDomainScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDomainScheme.swift; sourceTree = "<group>"; };
+		DD0DEBB124576D7200C32BE0 /* HTTPEndpointScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEndpointScheme.swift; sourceTree = "<group>"; };
 		DD0DEBB32457709F00C32BE0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		DD0DEBB5245770FA00C32BE0 /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
+		DD82771D245A072900DDD60B /* HTTPEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEndpoint.swift; sourceTree = "<group>"; };
+		DD82771F245A088600DDD60B /* HTTPDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDomain.swift; sourceTree = "<group>"; };
+		DDD41657245B615C003C35E7 /* HTTPSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPSession.swift; sourceTree = "<group>"; };
+		DDD41659245C206C003C35E7 /* HTTPAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPAuthorization.swift; sourceTree = "<group>"; };
+		DDD4165B245C2D13003C35E7 /* HTTP+OperationQue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTP+OperationQue.swift"; sourceTree = "<group>"; };
 		DDDB9C7624588A77008248A7 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
-		DDDB9C7A24588B1F008248A7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DDDB9C7A24588B1F008248A7 /* HTTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		DDDB9C7C24588E67008248A7 /* HTTPEncodingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEncodingOptions.swift; sourceTree = "<group>"; };
 		DDDB9C7E24588FD5008248A7 /* HTTPRequestRetrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestRetrier.swift; sourceTree = "<group>"; };
 		DDDB9C802458A5F9008248A7 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -62,6 +74,8 @@
 		DDDB9C9124599418008248A7 /* factories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = factories.json; sourceTree = "<group>"; };
 		DDDB9C9324599491008248A7 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		DDDB9C9524599643008248A7 /* string */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = string; sourceTree = "<group>"; };
+		DDDB9C972459984D008248A7 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		DDDB9C9924599953008248A7 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,15 +119,10 @@
 		DD0DEB942457666900C32BE0 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				DD82771C245A06FE00DDD60B /* HTTP */,
 				DDDB9C822458EE6C008248A7 /* cloud */,
 				DD0DEB952457666900C32BE0 /* Router.h */,
 				DD0DEB962457666900C32BE0 /* Info.plist */,
-				DD0DEBAC2457667D00C32BE0 /* DomainScheme.swift */,
-				DD0DEBB124576D7200C32BE0 /* EndpointScheme.swift */,
-				DDDB9C7A24588B1F008248A7 /* Router.swift */,
-				DDDB9C7624588A77008248A7 /* HTTPRequest.swift */,
-				DDDB9C7C24588E67008248A7 /* HTTPEncodingOptions.swift */,
-				DDDB9C7E24588FD5008248A7 /* HTTPRequestRetrier.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -128,8 +137,28 @@
 				DDDB9C802458A5F9008248A7 /* Request.swift */,
 				DDDB9C8F2459895D008248A7 /* Car.swift */,
 				DDDB9C9324599491008248A7 /* Factory.swift */,
+				DDDB9C972459984D008248A7 /* People.swift */,
+				DDDB9C9924599953008248A7 /* Todo.swift */,
 			);
 			path = RouterTests;
+			sourceTree = "<group>";
+		};
+		DD82771C245A06FE00DDD60B /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				DDDB9C7A24588B1F008248A7 /* HTTPManager.swift */,
+				DDD41657245B615C003C35E7 /* HTTPSession.swift */,
+				DDDB9C7624588A77008248A7 /* HTTPRequest.swift */,
+				DDD41659245C206C003C35E7 /* HTTPAuthorization.swift */,
+				DD0DEBAC2457667D00C32BE0 /* HTTPDomainScheme.swift */,
+				DD82771F245A088600DDD60B /* HTTPDomain.swift */,
+				DD0DEBB124576D7200C32BE0 /* HTTPEndpointScheme.swift */,
+				DD82771D245A072900DDD60B /* HTTPEndpoint.swift */,
+				DDDB9C7C24588E67008248A7 /* HTTPEncodingOptions.swift */,
+				DDDB9C7E24588FD5008248A7 /* HTTPRequestRetrier.swift */,
+				DDD4165B245C2D13003C35E7 /* HTTP+OperationQue.swift */,
+			);
+			path = HTTP;
 			sourceTree = "<group>";
 		};
 		DDDB9C822458EE6C008248A7 /* cloud */ = {
@@ -267,10 +296,15 @@
 			files = (
 				DDDB9C7724588A77008248A7 /* HTTPRequest.swift in Sources */,
 				DDDB9C7F24588FD5008248A7 /* HTTPRequestRetrier.swift in Sources */,
-				DDDB9C7B24588B1F008248A7 /* Router.swift in Sources */,
-				DD0DEBAD2457667D00C32BE0 /* DomainScheme.swift in Sources */,
+				DDD4165C245C2D13003C35E7 /* HTTP+OperationQue.swift in Sources */,
+				DD82771E245A072900DDD60B /* HTTPEndpoint.swift in Sources */,
+				DDD41658245B615C003C35E7 /* HTTPSession.swift in Sources */,
+				DD827720245A088600DDD60B /* HTTPDomain.swift in Sources */,
+				DDD4165A245C206C003C35E7 /* HTTPAuthorization.swift in Sources */,
+				DDDB9C7B24588B1F008248A7 /* HTTPManager.swift in Sources */,
+				DD0DEBAD2457667D00C32BE0 /* HTTPDomainScheme.swift in Sources */,
 				DDDB9C7D24588E67008248A7 /* HTTPEncodingOptions.swift in Sources */,
-				DD0DEBB224576D7200C32BE0 /* EndpointScheme.swift in Sources */,
+				DD0DEBB224576D7200C32BE0 /* HTTPEndpointScheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,9 +315,11 @@
 				DD0DEBB42457709F00C32BE0 /* Endpoint.swift in Sources */,
 				DDDB9C812458A5F9008248A7 /* Request.swift in Sources */,
 				DDDB9C9424599491008248A7 /* Factory.swift in Sources */,
+				DDDB9C9A24599954008248A7 /* Todo.swift in Sources */,
 				DDDB9C902459895D008248A7 /* Car.swift in Sources */,
 				DD0DEBA12457666900C32BE0 /* RouterTests.swift in Sources */,
 				DD0DEBB6245770FA00C32BE0 /* Domain.swift in Sources */,
+				DDDB9C982459984D008248A7 /* People.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
